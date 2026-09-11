@@ -1,0 +1,8 @@
+﻿  AirFight.cpp
+C:\Users\m.franceschini\Desktop\Exercice\Revision c++\AirFight\AirFight\TileData.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'AirFight.cpp')
+  
+C:\Users\m.franceschini\Desktop\Exercice\Revision c++\AirFight\AirFight\TileData.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'AirFight.cpp')
+  
+  AirFight.vcxproj -> C:\Users\m.franceschini\Desktop\Exercice\Revision c++\AirFight\x64\Debug\AirFight.exe
