@@ -1,26 +1,58 @@
-#pragma once
+﻿#ifndef TILEDATA_H
+#define TILEDATA_H
+#include <cstdint>
 
-using namespace std;
-#include <iostream>;
-#include <cstdint>;
+//contien simplement tout mes type de tile
 
 class TileData {
 
-public:
-	static constexpr unsigned int Wight = 8;
-	static constexpr unsigned int Height = 8;
-	static constexpr unsigned int TwoBitPerBit = 2;
-	static constexpr unsigned int DataSize = 16;
+    public:
 
-	static constexpr uint8_t maskWhitePixel = 0b00;
-	static constexpr uint8_t maskGrayPixel = 0b001;
-	static constexpr uint8_t maskDarkPixel = 0b10;
-	static constexpr uint8_t maskBlackPixel = 0b11;
+        static constexpr uint8_t Empty[16] = {
+            0b00000000, 0b00000000,
+            0b00000000, 0b00000000,
+            0b00000000, 0b00000000,
+            0b00000000, 0b00000000,
+            0b00000000, 0b00000000,
+            0b00000000, 0b00000000,
+            0b00000000, 0b00000000,
+            0b00000000, 0b00000000
+        };
 
-	int compteur = 0;
+        static constexpr uint8_t Full[16] = {
+            0b11111111, 0b11111111,
+            0b11111111, 0b11111111,
+            0b11111111, 0b11111111,
+            0b11111111, 0b11111111,
+            0b11111111, 0b11111111,
+            0b11111111, 0b11111111,
+            0b11111111, 0b11111111,
+            0b11111111, 0b11111111
+        };
 
-	int octetNumber = 1;
 
-	void AnalyseOctet(uint8_t* octetPtr);
+        static constexpr uint8_t Square[16] = {
+            0b11111111, 0b11111111,
+            0b11000000, 0b00000011,
+            0b11000000, 0b00000011,
+            0b11000000, 0b00000011,
+            0b11000000, 0b00000011,
+            0b11000000, 0b00000011,
+            0b11000000, 0b00000011,
+            0b11111111, 0b11111111
+        };
+
+        static constexpr uint8_t Debug[16] = {
+            0b11111111, 0b11111111,
+            0b11101010, 0b10101011,
+            0b11100101, 0b01011011,
+            0b11100100, 0b00011011,
+            0b11100100, 0b00011011,
+            0b11100101, 0b01011011,
+            0b11101010, 0b10101011,
+            0b11111111, 0b11111111
+        };
 
 };
+
+#endif // TILEDATA_H

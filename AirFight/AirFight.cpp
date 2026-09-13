@@ -1,34 +1,13 @@
-#include "TileData.h"
-#include <iostream>
-using namespace std;
+
+
+
+#include "GameManager.h"
+
 int main()
 {
-    uint8_t octet[16] = { 
-        0b00000000, 0b00000000,
-        0b10011000, 0b00100110,
-        0b10111000, 0b00101110,
-        0b00010000, 0b00000100,
-        0b11000000, 0b00000011,
-        0b01111111, 0b11111101,
-        0b00011011, 0b11100100,
-        0b00000000, 0b00000000
-    };
 
-    uint8_t octet2[16] = {
-        0b00000000, 0b00000000,
-        0b10011000, 0b00100110,
-        0b10111000, 0b00101110,
-        0b00010000, 0b00000100,
-        0b00000000, 0b00000000,
-        0b11111111, 0b11111111,
-        0b00011011, 0b11100100,
-        0b00000000, 0b00000000
-    };
+    GameManager::Instance()->CreateDebugMap();
 
-    TileData t;
 
-    t.AnalyseOctet(octet);
-
-    t.AnalyseOctet(octet2);
 }
 
