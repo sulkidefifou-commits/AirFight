@@ -53,6 +53,15 @@ class TileData {
             0b11111111, 0b11111111
         };
 
+    static const char* GetTypeName(const uint8_t* tile) {
+        if (tile == Empty)  return "TileData::Empty";
+        if (tile == Full)   return "TileData::Full";
+        if (tile == Square) return "TileData::Square";
+        if (tile == Debug)  return "TileData::Debug";
+
+        return "TileData::Inconnu";
+    }
+
 };
 
 #endif // TILEDATA_H

@@ -1,13 +1,15 @@
-﻿//
-// Created by Sulkide on 12/09/2026.
-//
-
+﻿
 #ifndef AIRFIGHT_DEBUGCOMMANDMANAGER_H
 #define AIRFIGHT_DEBUGCOMMANDMANAGER_H
+#include <string>
 
 //reconnais une commande et verifie ses argument puis déclanche un evenement debogage
 
 class DebugCommandManager {
+
+    public:
+        static bool Execute(const std::string& line);
+
 };
 
 

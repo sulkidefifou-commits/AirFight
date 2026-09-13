@@ -22,11 +22,5 @@ public:
 	static constexpr uint8_t maskDarkPixel = 0b10;
 	static constexpr uint8_t maskBlackPixel = 0b11;
 
-	int compteur = 0;
-
-	int octetNumber = 1;
-
-	void AnalyseOctet(const uint8_t* octetPtr);
-
 };
 #endif // TILE_H

@@ -34,7 +34,7 @@ class VideoManager {
 
         void SetCurrentMap(const std::vector<const uint8_t*> &map);
 
-        std::vector<const uint8_t*> GetCurrentMap();
+        const std::vector<const uint8_t*>& GetCurrentMap() const;
 };
 
 

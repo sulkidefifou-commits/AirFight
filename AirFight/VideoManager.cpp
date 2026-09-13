@@ -40,7 +40,7 @@ void VideoManager::DisplayMap() const {
             const int byteIndex = pixelY * 2 + pixelX / 4; //pour un tile on fais, ligne * 2 (une ligne vaux 2 octect) + le premier ou 2eme octect
             const int shift = 6 - (pixelX % 4) * 2;
 
-            const uint8_t pixel = (tile[byteIndex] >> shift) & 0b00000011;
+            const uint8_t pixel = (tile[byteIndex] >> shift) & 0b00000011;//porte logique ET
 
             std::cout << characters[pixel] << characters[pixel];
         }
@@ -55,7 +55,7 @@ void VideoManager::SetCurrentMap(const std::vector<const uint8_t *> &map) {
 
 }
 
-std::vector<const uint8_t *> VideoManager::GetCurrentMap() {
+const std::vector<const uint8_t*> &VideoManager::GetCurrentMap() const {
 
     return currentMap;
 
