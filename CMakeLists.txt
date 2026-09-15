@@ -18,8 +18,8 @@ add_executable(
         AirFight/GameManager.h
         AirFight/Grid.cpp
         AirFight/Grid.h
-        AirFight/DebugCommandManager.cpp
-        AirFight/DebugCommandManager.h
+        AirFight/CommandManager.cpp
+        AirFight/CommandManager.h
         AirFight/CoordinateParser.cpp
         AirFight/CoordinateParser.h
         AirFight/InputManager.cpp

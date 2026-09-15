@@ -5,7 +5,7 @@
 
 //reconnais une commande et verifie ses argument puis déclanche un evenement debogage
 
-class DebugCommandManager {
+class CommandManager {
 
     public:
         static bool Execute(const std::string& line);

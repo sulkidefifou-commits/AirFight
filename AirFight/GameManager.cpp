@@ -3,13 +3,15 @@
 #include "GameManager.h"
 
 #include <vector>
+
+#include "CoordinateParser.h"
 #include "Grid.h"
 #include "Tile.h"
 #include "VideoManager.h"
 
 GameManager* GameManager::instance = nullptr;
 
-void GameManager::CreateDebugMap(int GridWidth, int GridHeight, const uint8_t Debug[16]){
+void GameManager::CreateMap(int GridWidth, int GridHeight, const uint8_t Debug[16]){
 
     SetCurrentGridWidth(GridWidth);
     SetCurrentGridHeight(GridHeight);
@@ -81,4 +83,27 @@ int GameManager::GetCurrentPixelNumberPerColumn() const {
 int GameManager::GetTotalNumberOfTiles() const {
 
     return currentGridWidth*currentGridHeight;
+}
+
+void GameManager::HardReplaceTileAtValue(const std::string &coordinate, const uint8_t *newTile) {
+
+    int x;
+    int y;
+
+    if (!CoordinateParser::TryParse(coordinate, x, y)) {
+        return;
+    }
+
+    const int width = Instance()->GetCurrentGridWidth();
+    const int height = Instance()->GetCurrentGridHeight();
+
+    if (x < 0 || y < 0 || x >= width || y >= height) {
+        return;
+    }
+
+    const std::size_t index = static_cast<std::size_t>(y) * width + x;
+
+    VideoManager::Instance()->SetTileAtIndex(index, newTile);
+
+
 }

@@ -1,7 +1,4 @@
-﻿//
-// Created by Sulkide on 12/09/2026.
-//
-
+﻿
 #ifndef AIRFIGHT_COORDINATEPARSER_H
 #define AIRFIGHT_COORDINATEPARSER_H
 #include <string>

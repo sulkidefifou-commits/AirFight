@@ -1,10 +1,8 @@
-﻿//
-// Created by Sulkide on 12/09/2026.
-//
-
-#ifndef AIRFIGHT_GAMEMANAGER_H
+﻿#ifndef AIRFIGHT_GAMEMANAGER_H
 #define AIRFIGHT_GAMEMANAGER_H
 #include <cstdint>
+#include <string>
+
 #include "TileData.h"
 
 
@@ -33,7 +31,7 @@ class GameManager {
             return instance;
         }
 
-        void CreateDebugMap(int GridWidth = 13, int GridHeight = 13, const uint8_t Debug[16] = TileData::Debug);
+        void CreateMap(int GridWidth = 13, int GridHeight = 13, const uint8_t Debug[16] = TileData::Debug);
 
         void SetCurrentGridWidth(int value);
         void SetCurrentGridHeight(int value);
@@ -47,6 +45,8 @@ class GameManager {
         int GetCurrentPixelNumberPerColumn() const;
 
         int GetTotalNumberOfTiles() const;
+
+        static void HardReplaceTileAtValue(const std::string& coordinate,const uint8_t* newTile);
 };
 
 

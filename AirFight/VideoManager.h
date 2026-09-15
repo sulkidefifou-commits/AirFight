@@ -1,7 +1,6 @@
 ﻿#ifndef AIRFIGHT_VIDEO_H
 #define AIRFIGHT_VIDEO_H
 #include <cstdint>
-#include <list>
 #include <vector>
 
 #include "GameManager.h"
@@ -31,6 +30,8 @@ class VideoManager {
         }
 
         void DisplayMap() const;
+
+        bool SetTileAtIndex(std::size_t index, const uint8_t* newTile);
 
         void SetCurrentMap(const std::vector<const uint8_t*> &map);
 

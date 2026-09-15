@@ -1,7 +1,5 @@
-﻿
-
-#include "Grid.h"
-
+﻿#include "Grid.h"
+#include "CoordinateParser.h"
 #include "GameManager.h"
 #include "VideoManager.h"
 
@@ -26,3 +24,4 @@ const uint8_t* Grid::GetTileAt(int x, int y) {
 
 
 }
+

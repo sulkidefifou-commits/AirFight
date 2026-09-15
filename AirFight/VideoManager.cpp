@@ -10,6 +10,12 @@ using namespace std;
 VideoManager* VideoManager::instance = nullptr;
 
 void VideoManager::DisplayMap() const {
+
+
+    //commandes d'affichage ANSI permet de reset l'historique console et remplacer notre cursor
+    std::cout << "\x1b[2J\x1b[H";
+
+
     const int width = GameManager::Instance()->GetCurrentGridWidth();
    // const int height = GameManager::Instance()->GetCurrentGridHeight();
     const int pixelWidth = GameManager::Instance()->GetCurrentPixelNumberPerRow();
@@ -47,6 +53,23 @@ void VideoManager::DisplayMap() const {
 
         std::cout << '\n';
     }
+
+    std::cout << std::flush;
+
+}
+
+bool VideoManager::SetTileAtIndex(std::size_t index, const uint8_t *newTile) {
+
+    if (index >= currentMap.size() || newTile == nullptr) {
+        return false;
+    }
+
+    currentMap[index] = newTile;
+
+    DisplayMap();
+
+    return true;
+
 }
 
 void VideoManager::SetCurrentMap(const std::vector<const uint8_t *> &map) {
