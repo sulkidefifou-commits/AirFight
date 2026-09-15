@@ -13,7 +13,7 @@ void VideoManager::DisplayMap() const {
 
 
     //commandes d'affichage ANSI permet de reset l'historique console et remplacer notre cursor
-    std::cout << "\x1b[2J\x1b[H";
+    std::cout << "\x1b[2J\x1b[3J\x1b[H";
 
 
     const int width = GameManager::Instance()->GetCurrentGridWidth();
