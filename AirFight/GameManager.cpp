@@ -11,6 +11,24 @@
 
 GameManager* GameManager::instance = nullptr;
 
+void GameManager::ReplaceEntityOnBasePosition() const
+{
+    int FirstPosY = 0;
+
+    int AdditionalPositionY = GetCurrentGridHeight() - Grid::GridMinHeight;
+
+    for (int i = 0; i <= AdditionalPositionY; i=i+2)
+    {
+        FirstPosY++;
+    }
+
+    for (int i = 0; i <= Grid::GridMinHeight; i++)
+    {
+        VideoManager::Instance()->SetTileAtIndex((GetCurrentGridHeight()) * (FirstPosY + i), TileData::Full);
+        //VideoManager::Instance()->SetTileAtIndex(GetCurrentGridHeight() * (FirstPosY + i) + (GetCurrentGridWidth()-1), TileData::Full);
+    }
+}
+
 void GameManager::CreateMap(int GridWidth, int GridHeight, const uint8_t Debug[16]){
 
     SetCurrentGridWidth(GridWidth);
@@ -83,6 +101,15 @@ int GameManager::GetCurrentPixelNumberPerColumn() const {
 int GameManager::GetTotalNumberOfTiles() const {
 
     return currentGridWidth*currentGridHeight;
+}
+
+void GameManager::StartParty(int GridWidth, int GridHeight)
+{
+    Instance()->CreateMap(GridWidth, GridHeight);
+
+    Instance()->ReplaceEntityOnBasePosition();
+
+
 }
 
 void GameManager::HardReplaceTileAtValue(const std::string &coordinate, const uint8_t *newTile) {

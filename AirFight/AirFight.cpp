@@ -35,6 +35,7 @@ int main()
     << "----Tapez [HELP] pour afficher les aides et information----\n"
     << endl;
 
+    GameManager::StartParty(13, 13);
 
     while (true) {
         std::cout << "> " << std::flush; //flush permet de vider le buffer sans sauter la ligne comme endl

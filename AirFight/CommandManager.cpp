@@ -62,6 +62,7 @@ bool CommandManager::Execute(const std::string& line) {
     }
 
 
+
     if (command == "CREATE") {
         std::string widthText;
         std::string heightText;

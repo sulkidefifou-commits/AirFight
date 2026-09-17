@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(AirFight)
 
+
 add_executable(
 
         AirFight

@@ -17,6 +17,8 @@ class GameManager {
         int currentGridHeight = 13;
         int RefreshVideoValue = 100;
 
+        void ReplaceEntityOnBasePosition() const;
+
 
 
     public:
@@ -45,6 +47,8 @@ class GameManager {
         int GetCurrentPixelNumberPerColumn() const;
 
         int GetTotalNumberOfTiles() const;
+
+        static void StartParty(int GridWidth = 13, int GridHeight = 13);
 
         static void HardReplaceTileAtValue(const std::string& coordinate,const uint8_t* newTile);
 };
